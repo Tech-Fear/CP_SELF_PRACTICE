@@ -32,4 +32,5 @@ return 0;
 }
 
 // case 1. a very large then a%MOD and then calculate it 
-// case 2. 
+// case 2. Mod is large 
+// case 3. ETF=Euler totient function , if mod is prime then a^(b^c) => a^(b^c(mod MOD-1))%MOD;  
