@@ -1,0 +1,1 @@
+{"name":"Local: 1985B","url":"e:\\CP_LPU_Batch\\1985B.cpp","tests":[{"id":1718121020929,"input":"2\n3\n15","output":"3\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CP_LPU_Batch\\1985B.cpp","group":"local","local":true}

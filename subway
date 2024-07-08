@@ -1,0 +1,654 @@
+"questions": [
+        {
+            "_id": "5c01806cab9c271064a524f3",
+            "user": "6347e1f8a1338778cf61decf",
+            "alternativeExplanations": [],
+            "approveStatus": "",
+            "coding": [
+                {
+                    "_id": "5c01806cab9c273aefa524f4",
+                    "testcases": [
+                        {
+                            "_id": "5c01806cab9c27b50ca524f6",
+                            "output": "500\n5\n400\n500",
+                            "input": "10",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5c01806cab9c271acda524f5",
+                            "output": "500\n5\n400\n250",
+                            "input": "5",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5d95c25e0ade00463519e8db",
+                            "output": "500\n5\n400\n150",
+                            "input": "3",
+                            "args": "",
+                            "useTestFramework": false
+                        }
+                    ],
+                    "template": "#include<stdio.h>\nmain()\n{             \n\n  //write your code here\n\n}",
+                    "language": "c"
+                },
+                {
+                    "_id": "5c01806cab9c273aefa524f4",
+                    "testcases": [
+                        {
+                            "_id": "5c01806cab9c27b50ca524f6",
+                            "output": "500\n5\n400\n500",
+                            "input": "10",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5c01806cab9c271acda524f5",
+                            "output": "500\n5\n400\n250",
+                            "input": "5",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5d95c25e0ade00495419e8dc",
+                            "output": "500\n5\n400\n150",
+                            "input": "3",
+                            "args": "",
+                            "useTestFramework": false
+                        }
+                    ],
+                    "template": "#include<iostream> \nusing namespace std;\nint main()\n{             \n\n  //write your code here\n\n}",
+                    "language": "cpp"
+                }
+            ],
+            "hasArg": false,
+            "argumentDescription": "",
+            "hasUserInput": true,
+            "userInputDescription": "A number",
+            "answers": [
+                {
+                    "answerText": "",
+                    "_id": "5c01806cab9c27792ea524f7",
+                    "answerTextArray": [
+                        ""
+                    ],
+                    "meta": "U2FsdGVkX19nEEqSS1xmRHeKYnXrzhnam9+WuUPEyEGWUXm2SZsTGb+DN/01qrEM",
+                    "iv": "96dcb07a75bb075fc92b2c188aeec4ee",
+                    "isCorrectAnswer": false
+                }
+            ],
+            "wordLimit": 1,
+            "isActive": true,
+            "updatedAt": "2020-02-19T17:45:00.475Z",
+            "createdAt": "2018-11-30T18:24:44.008Z",
+            "plusMark": 0,
+            "minusMark": 0,
+            "answerNumber": 1,
+            "questionHeader": null,
+            "prefferedLanguage": [
+                "English"
+            ],
+            "questionTextArray": [
+                "<p><u><strong>Operators</strong></u></p>\n<p>We can use C/C++ to perform mathematical calculations like 5 + 6, 6 / 2 etc. <br/>\nThe basic symbols used to perform mathematical operations are called operators.</p>\n<p>For example, consider the statement:  c = a + b;<br/>\nHere, ‘+’ is the operator known as addition operator and ‘a’ and ‘b’ are operands.</p>\n<p>Operators tell compiler what to do with the numbers surrounding them. The Plus sign(+) adds numbers, the minus sign (-) subtracts numbers, the asterisk (*) multiplies numbers, and the slash (/) divides numbers. </p>\n<p><strong>Example in C++:</strong></p>\n<pre>\n<code class=\"language-cpp\">#include &lt;iostream&gt;\nusing namespace std;\nint main()\n{\n  cout&lt;&lt;(300 + 100);\n}</code></pre>\n<p>Output of the above C++ code will be 400.  <br/>\n </p>\n<p><strong>Note</strong>:</p>\n<p>In the above program first line is to include header file for input and output. Generally, a program includes various programming elements like built-in functions, classes, keywords, constants, operators etc., that are already defined in the standard C++ library. In order to use such pre-defined elements in a program, an appropriate header must be included in the program. </p>\n<p>In C++ we use <strong>cout</strong> to display the content and <strong>cin</strong> to take input from user while in C, we use <b>printf </b>to display the content and <b>scanf </b>to take input from user</p>\n<p>The main() is a startup function that starts the execution of a C/C++ program. All C/C++ statements that need to be executed are written within main(). The compiler executes all the instructions written within the opening and closing curly braces' {}' that enclose the body of main(). Once all the instructions in main() are executed, the control passes out of main(), terminating the entire program and returning a value to the operating system.</p>\n<p><strong>Question: </strong>Write a C/C++ code to print the result of the following expressions in different lines:<br/>\n1. Sum of 200 and 300<br/>\n2. Division of 250 by 50<br/>\n3. Difference of 500 and 100<br/>\n4. Product of '<strong>a'</strong> and 50<strong> </strong>,where '<strong>a' </strong>is a keyboard input</p>\n"
+            ],
+            "category": "code",
+            "questionText": "<p><u><strong>Operators</strong></u></p>\n<p>We can use C/C++ to perform mathematical calculations like 5 + 6, 6 / 2 etc. <br/>\nThe basic symbols used to perform mathematical operations are called operators.</p>\n<p>For example, consider the statement:  c = a + b;<br/>\nHere, ‘+’ is the operator known as addition operator and ‘a’ and ‘b’ are operands.</p>\n<p>Operators tell compiler what to do with the numbers surrounding them. The Plus sign(+) adds numbers, the minus sign (-) subtracts numbers, the asterisk (*) multiplies numbers, and the slash (/) divides numbers. </p>\n<p><strong>Example in C++:</strong></p>\n<pre>\n<code class=\"language-cpp\">#include &lt;iostream&gt;\nusing namespace std;\nint main()\n{\n  cout&lt;&lt;(300 + 100);\n}</code></pre>\n<p>Output of the above C++ code will be 400.  <br/>\n </p>\n<p><strong>Note</strong>:</p>\n<p>In the above program first line is to include header file for input and output. Generally, a program includes various programming elements like built-in functions, classes, keywords, constants, operators etc., that are already defined in the standard C++ library. In order to use such pre-defined elements in a program, an appropriate header must be included in the program. </p>\n<p>In C++ we use <strong>cout</strong> to display the content and <strong>cin</strong> to take input from user while in C, we use <b>printf </b>to display the content and <b>scanf </b>to take input from user</p>\n<p>The main() is a startup function that starts the execution of a C/C++ program. All C/C++ statements that need to be executed are written within main(). The compiler executes all the instructions written within the opening and closing curly braces' {}' that enclose the body of main(). Once all the instructions in main() are executed, the control passes out of main(), terminating the entire program and returning a value to the operating system.</p>\n<p><strong>Question: </strong>Write a C/C++ code to print the result of the following expressions in different lines:<br/>\n1. Sum of 200 and 300<br/>\n2. Division of 250 by 50<br/>\n3. Difference of 500 and 100<br/>\n4. Product of '<strong>a'</strong> and 50<strong> </strong>,where '<strong>a' </strong>is a keyboard input</p>\n",
+            "isAllowReuse": "global",
+            "questionType": "single",
+            "complexity": "easy",
+            "grade": {
+                "_id": "5bc97c1e6dcc694f0247ea57",
+                "name": "Programming"
+            },
+            "tags": [],
+            "subject": {
+                "_id": "3835d8c367564425b162d7db",
+                "name": "Core Programming"
+            },
+            "classRooms": [
+                "59e8a6e8223f3000112074d1"
+            ],
+            "uid": "2956f2b3-bb54-4135-959b-b58a9f1b702a",
+            "synced": true,
+            "practiceSets": [
+                "5c01806cab9c27667da524f2",
+                "5e58035951d5b1a2d4ea5d95"
+            ],
+            "mig": "tal",
+            "unit": {
+                "name": "Basic Concepts",
+                "_id": "fa666afaf2114b90ac805a07"
+            },
+            "topic": {
+                "_id": "629852efd1067624835c119d",
+                "name": "Miscellaneous"
+            },
+            "testcases": [
+                {
+                    "_id": "5c01806cab9c27b50ca524f6",
+                    "output": "500\n5\n400\n500",
+                    "input": "10",
+                    "args": "",
+                    "useTestFramework": false
+                },
+                {
+                    "_id": "5c01806cab9c271acda524f5",
+                    "output": "500\n5\n400\n250",
+                    "input": "5",
+                    "args": "",
+                    "useTestFramework": false
+                },
+                {
+                    "_id": "5d95c25e0ade00463519e8db",
+                    "output": "500\n5\n400\n150",
+                    "input": "3",
+                    "args": "",
+                    "useTestFramework": false
+                }
+            ],
+            "location": "5bc97ba36dcc69790547ea53",
+            "locations": [
+                "5bc97ba36dcc69790547ea53"
+            ],
+            "userRole": "publisher",
+            "isPublished": true,
+            "section": "Core",
+            "order": 1,
+            "countNumber": 1
+        },
+        {
+            "_id": "5c01806cab9c277ddaa524f8",
+            "user": "6347e1f8a1338778cf61decf",
+            "alternativeExplanations": [],
+            "approveStatus": "",
+            "coding": [
+                {
+                    "_id": "5c01806cab9c27914fa524f9",
+                    "testcases": [
+                        {
+                            "_id": "5c01806cab9c278796a524fb",
+                            "output": "5",
+                            "input": "5",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5c01806cab9c27d3f2a524fa",
+                            "output": "25",
+                            "input": "1",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5d95b9510ade00689819e8ab",
+                            "output": "5",
+                            "input": "5",
+                            "args": "",
+                            "useTestFramework": false
+                        }
+                    ],
+                    "template": "#include <stdio.h>\n\nmain()\n{\n  // write your code here\n}",
+                    "language": "c"
+                },
+                {
+                    "_id": "5c01806cab9c27914fa524f9",
+                    "testcases": [
+                        {
+                            "_id": "5c01806cab9c278796a524fb",
+                            "output": "5",
+                            "input": "5",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5c01806cab9c27d3f2a524fa",
+                            "output": "25",
+                            "input": "1",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5d95b9510ade00ab1219e8ac",
+                            "output": "5",
+                            "input": "5",
+                            "args": "",
+                            "useTestFramework": false
+                        }
+                    ],
+                    "template": "#include <iostream>\nusing namespace std;\nint main()\n{\n  //write your code here\n}",
+                    "language": "cpp"
+                }
+            ],
+            "hasArg": false,
+            "argumentDescription": "",
+            "hasUserInput": true,
+            "userInputDescription": "A number",
+            "answers": [
+                {
+                    "answerText": "",
+                    "_id": "5c01806cab9c2742aca524fc",
+                    "answerTextArray": [
+                        ""
+                    ],
+                    "meta": "U2FsdGVkX1/Ovp9HLXuLjMC+GoD/5OrEQbYnB0v2Eqv2Nn5E8PqEwRXb1539r4es",
+                    "iv": "c13a88d450a7f9438d537d296ddc6a42",
+                    "isCorrectAnswer": false
+                }
+            ],
+            "wordLimit": 1,
+            "isActive": true,
+            "updatedAt": "2020-02-19T17:45:00.483Z",
+            "createdAt": "2018-11-30T18:24:44.108Z",
+            "plusMark": 0,
+            "minusMark": 0,
+            "answerNumber": 1,
+            "questionHeader": null,
+            "prefferedLanguage": [
+                "English"
+            ],
+            "questionTextArray": [
+                "<p><u><strong>Evaluating Expressions</strong></u><br/>\nExpressions are made up of values (the numbers) connected by operators (the math signs) that produce a new value the code can use.</p>\n<p>10 + 30 is an example of expression. Values 10 and 30 are connected by an operator ‘ + ‘.</p>\n<p>When the computer solves the expression 10 + 30 and returns the value 40, it has evaluated the expression. Evaluating an expression reduces the expression to a single value, just like solving a math problem reduces the problem to a single number: the answer.</p>\n<p>When a program evaluates an expression, it has an order of precedence in which these are going to be calculated, just like you do when you do math. </p>\n<p>There are just a few rules:</p>\n<p>1. Multiplication and division always go before addition and subtraction.</p>\n<p>2. We use parentheses to control the order of operations. Parts of the expression inside parentheses are evaluated first.</p>\n<p>3. Parentheses can be nested, which means that there can be parentheses inside parentheses.</p>\n<p>4. Program evaluates the innermost parentheses first, then the outer ones.</p>\n<p>5. If two operators have same precedence, then their associativity is checked. The operators +, -, * and / are left associative. This means that if we have the expression 3 * 8 / 3, then first 3 * 8 is evaluated, then 24 / 3 is evaluated.</p>\n<p><strong>Example</strong>:<br/>\nThe expression 7 + 6 * 2 + 4 evaluates to 23, not 30, because 6  * 2 is evaluated first. If the expression were (7 + 6) * (2 + 4) it would evaluate to 78, because the (7 + 6) and (2 + 4) inside parentheses are evaluated before multiplication.</p>\n<p><strong>Question</strong>: Write a program to print the result of the following statement</p>\n<p>Add 10 to 8, then Multiply the result by 2, then subtract 11 from the result, and divide it by <strong>'a'</strong> where a is a keyboard input.</p>\n"
+            ],
+            "category": "code",
+            "questionText": "<p><u><strong>Evaluating Expressions</strong></u><br/>\nExpressions are made up of values (the numbers) connected by operators (the math signs) that produce a new value the code can use.</p>\n<p>10 + 30 is an example of expression. Values 10 and 30 are connected by an operator ‘ + ‘.</p>\n<p>When the computer solves the expression 10 + 30 and returns the value 40, it has evaluated the expression. Evaluating an expression reduces the expression to a single value, just like solving a math problem reduces the problem to a single number: the answer.</p>\n<p>When a program evaluates an expression, it has an order of precedence in which these are going to be calculated, just like you do when you do math. </p>\n<p>There are just a few rules:</p>\n<p>1. Multiplication and division always go before addition and subtraction.</p>\n<p>2. We use parentheses to control the order of operations. Parts of the expression inside parentheses are evaluated first.</p>\n<p>3. Parentheses can be nested, which means that there can be parentheses inside parentheses.</p>\n<p>4. Program evaluates the innermost parentheses first, then the outer ones.</p>\n<p>5. If two operators have same precedence, then their associativity is checked. The operators +, -, * and / are left associative. This means that if we have the expression 3 * 8 / 3, then first 3 * 8 is evaluated, then 24 / 3 is evaluated.</p>\n<p><strong>Example</strong>:<br/>\nThe expression 7 + 6 * 2 + 4 evaluates to 23, not 30, because 6  * 2 is evaluated first. If the expression were (7 + 6) * (2 + 4) it would evaluate to 78, because the (7 + 6) and (2 + 4) inside parentheses are evaluated before multiplication.</p>\n<p><strong>Question</strong>: Write a program to print the result of the following statement</p>\n<p>Add 10 to 8, then Multiply the result by 2, then subtract 11 from the result, and divide it by <strong>'a'</strong> where a is a keyboard input.</p>\n",
+            "isAllowReuse": "global",
+            "questionType": "single",
+            "complexity": "easy",
+            "grade": {
+                "name": "Programming",
+                "_id": "5bc97c1e6dcc694f0247ea57"
+            },
+            "tags": [],
+            "subject": {
+                "_id": "3835d8c367564425b162d7db",
+                "name": "Core Programming"
+            },
+            "classRooms": [
+                "59e8a6e8223f3000112074d1"
+            ],
+            "uid": "eb438335-eb1e-4d6e-9e83-86edeff466b9",
+            "synced": true,
+            "practiceSets": [
+                "5c01806cab9c27667da524f2",
+                "5e58035951d5b1a2d4ea5d95"
+            ],
+            "mig": "tal",
+            "unit": {
+                "name": "Basic Concepts",
+                "_id": "fa666afaf2114b90ac805a07"
+            },
+            "topic": {
+                "_id": "629852efd1067624835c119d",
+                "name": "Miscellaneous"
+            },
+            "testcases": [
+                {
+                    "_id": "5c01806cab9c278796a524fb",
+                    "output": "5",
+                    "input": "5",
+                    "args": "",
+                    "useTestFramework": false
+                },
+                {
+                    "_id": "5c01806cab9c27d3f2a524fa",
+                    "output": "25",
+                    "input": "1",
+                    "args": "",
+                    "useTestFramework": false
+                },
+                {
+                    "_id": "5d95b9510ade00689819e8ab",
+                    "output": "5",
+                    "input": "5",
+                    "args": "",
+                    "useTestFramework": false
+                }
+            ],
+            "location": "5bc97ba36dcc69790547ea53",
+            "locations": [
+                "5bc97ba36dcc69790547ea53"
+            ],
+            "userRole": "publisher",
+            "isPublished": true,
+            "section": "Core",
+            "order": 2,
+            "countNumber": 2
+        },
+        {
+            "_id": "5c01806cab9c27816ca524fd",
+            "user": "6347e1f8a1338778cf61decf",
+            "alternativeExplanations": [],
+            "approveStatus": "",
+            "coding": [
+                {
+                    "_id": "5c01806cab9c277803a524fe",
+                    "testcases": [
+                        {
+                            "_id": "5c01806cab9c271d06a52500",
+                            "output": "60",
+                            "input": "60",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5c01806cab9c270838a524ff",
+                            "output": "70",
+                            "input": "70",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5d95bf260ade00e98e19e8d8",
+                            "output": "80",
+                            "input": "80",
+                            "args": "",
+                            "useTestFramework": false
+                        }
+                    ],
+                    "template": "#include <stdio.h>\n\nmain()\n{\n\n  //write your code here\n\n}\n",
+                    "language": "c"
+                },
+                {
+                    "_id": "5c01806cab9c277803a524fe",
+                    "testcases": [
+                        {
+                            "_id": "5c01806cab9c271d06a52500",
+                            "output": "60",
+                            "input": "60",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5c01806cab9c270838a524ff",
+                            "output": "70",
+                            "input": "70",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5d95bf260ade00c36c19e8d9",
+                            "output": "80",
+                            "input": "80",
+                            "args": "",
+                            "useTestFramework": false
+                        }
+                    ],
+                    "template": "#include <iostream>\nusing namespace std;\n\nint main()\n{\n\n  //write your code here\n\n}\n",
+                    "language": "cpp"
+                }
+            ],
+            "hasArg": false,
+            "argumentDescription": "",
+            "hasUserInput": true,
+            "userInputDescription": "A number",
+            "answers": [
+                {
+                    "answerText": "",
+                    "_id": "5c01806cab9c275ae3a52501",
+                    "answerTextArray": [
+                        ""
+                    ],
+                    "meta": "U2FsdGVkX1/IsEdbRVIQJf9PuHDH6BSnGpCLAtHeFwfZbIS4YGktroKPeJGenT7b",
+                    "iv": "5cbd469c9ec708bc1617213446dd7177",
+                    "isCorrectAnswer": false
+                }
+            ],
+            "wordLimit": 1,
+            "isActive": true,
+            "updatedAt": "2020-02-19T17:45:00.490Z",
+            "createdAt": "2018-11-30T18:24:44.208Z",
+            "plusMark": 0,
+            "minusMark": 0,
+            "answerNumber": 1,
+            "questionHeader": null,
+            "prefferedLanguage": [
+                "English"
+            ],
+            "questionTextArray": [
+                "<p><u><strong>Variables</strong></u><br/>\nThe word variable in programming describes a place to store information such as numbers, text, lists of numbers and so on.<br/>\nWhen an expression evaluates to a value, you can use that value later by storing it in a variable. A variable has a data type which tell variable the type of data that can be stored in it.</p>\n<p><span style=\"font-family:Courier New,Courier,monospace;\"><u><strong>Type &amp; Description:</strong></u></span><br/>\n<span style=\"font-family:Arial,Helvetica,sans-serif;\">bool - Stores either true or false.<br/>\nchar - </span>Smallest addressable unit of the machine that can contain basic character set.<br/>\n<span style=\"font-family:Arial,Helvetica,sans-serif;\">int - Used to store integer values.<br/>\nfloat - Used to store single-precision floating point values.<br/>\ndouble - Used to store double-precision floating point values.<br/>\nvoid - A void</span> variable cannot be initialised with any value. This is usually used to specify the type of functions which return nothing. </p>\n<p><u><strong>To assign a value to a variable :</strong></u> type variable_name = value;<br/>\nFor example, <span style=\"font-family:Courier New,Courier,monospace;\"> int price = 500;</span></p>\n<p><strong>Question</strong>: Write a program to assign the value '<strong>a' </strong>(where '<strong>a'</strong> is a keyboard input) to the variable <span style=\"font-family:Courier New,Courier,monospace;\">first</span>, then assign the contents of first to variable <span style=\"font-family:Courier New,Courier,monospace;\">second</span>. Print the variable '<span style=\"font-family:Courier New,Courier,monospace;\">second</span>'</p>\n"
+            ],
+            "category": "code",
+            "questionText": "<p><u><strong>Variables</strong></u><br/>\nThe word variable in programming describes a place to store information such as numbers, text, lists of numbers and so on.<br/>\nWhen an expression evaluates to a value, you can use that value later by storing it in a variable. A variable has a data type which tell variable the type of data that can be stored in it.</p>\n<p><span style=\"font-family:Courier New,Courier,monospace;\"><u><strong>Type &amp; Description:</strong></u></span><br/>\n<span style=\"font-family:Arial,Helvetica,sans-serif;\">bool - Stores either true or false.<br/>\nchar - </span>Smallest addressable unit of the machine that can contain basic character set.<br/>\n<span style=\"font-family:Arial,Helvetica,sans-serif;\">int - Used to store integer values.<br/>\nfloat - Used to store single-precision floating point values.<br/>\ndouble - Used to store double-precision floating point values.<br/>\nvoid - A void</span> variable cannot be initialised with any value. This is usually used to specify the type of functions which return nothing. </p>\n<p><u><strong>To assign a value to a variable :</strong></u> type variable_name = value;<br/>\nFor example, <span style=\"font-family:Courier New,Courier,monospace;\"> int price = 500;</span></p>\n<p><strong>Question</strong>: Write a program to assign the value '<strong>a' </strong>(where '<strong>a'</strong> is a keyboard input) to the variable <span style=\"font-family:Courier New,Courier,monospace;\">first</span>, then assign the contents of first to variable <span style=\"font-family:Courier New,Courier,monospace;\">second</span>. Print the variable '<span style=\"font-family:Courier New,Courier,monospace;\">second</span>'</p>\n",
+            "isAllowReuse": "global",
+            "questionType": "single",
+            "complexity": "easy",
+            "grade": {
+                "name": "Programming",
+                "_id": "5bc97c1e6dcc694f0247ea57"
+            },
+            "tags": [],
+            "subject": {
+                "_id": "3835d8c367564425b162d7db",
+                "name": "Core Programming"
+            },
+            "classRooms": [
+                "59e8a6e8223f3000112074d1"
+            ],
+            "uid": "02f7ea05-6e84-40a4-b0ec-519d4606b52b",
+            "synced": true,
+            "practiceSets": [
+                "5c01806cab9c27667da524f2",
+                "5e58035951d5b1a2d4ea5d95"
+            ],
+            "mig": "tal",
+            "unit": {
+                "name": "Basic Concepts",
+                "_id": "fa666afaf2114b90ac805a07"
+            },
+            "topic": {
+                "_id": "629852efd1067624835c119d",
+                "name": "Miscellaneous"
+            },
+            "testcases": [
+                {
+                    "_id": "5c01806cab9c271d06a52500",
+                    "output": "60",
+                    "input": "60",
+                    "args": "",
+                    "useTestFramework": false
+                },
+                {
+                    "_id": "5c01806cab9c270838a524ff",
+                    "output": "70",
+                    "input": "70",
+                    "args": "",
+                    "useTestFramework": false
+                },
+                {
+                    "_id": "5d95bf260ade00e98e19e8d8",
+                    "output": "80",
+                    "input": "80",
+                    "args": "",
+                    "useTestFramework": false
+                }
+            ],
+            "location": "5bc97ba36dcc69790547ea53",
+            "locations": [
+                "5bc97ba36dcc69790547ea53"
+            ],
+            "userRole": "publisher",
+            "isPublished": true,
+            "section": "Core",
+            "order": 3,
+            "countNumber": 3
+        },
+        {
+            "_id": "5c01806cab9c27cd52a52502",
+            "user": "6347e1f8a1338778cf61decf",
+            "alternativeExplanations": [
+                {
+                    "_id": "5c5d7b13d6c5703d7df62433",
+                    "isApproved": false,
+                    "explanation": "<p>#include &lt;iostream&gt;</p>\n\n<p>using namespace std;</p>\n\n<p>int main()<br />\n{<br />\n&nbsp; &nbsp;<br />\n// total miles driven(variable: miles_driven - assign 100)<br />\nint miles_driven = 100;</p>\n\n<p>// gallons of gas used(variable: gas_used - assign 4)<br />\nint gas_used=4;<br />\n// Calculate MPG = miles_driven / gas_used<br />\nint mpg=miles_driven/gas_used;<br />\n// Output MPG<br />\n&nbsp; cout&lt;&lt;mpg&lt;&lt;endl;</p>\n\n<p>&nbsp; &nbsp; return 0;<br />\n}</p>\n",
+                    "user": {
+                        "_id": "5c0091db5e6efb28585aa5ac",
+                        "name": "SHASHANK KUMAR AGRAHARI"
+                    }
+                },
+                {
+                    "_id": "5d0a5423dca02a7d395d47e9",
+                    "isApproved": false,
+                    "explanation": "<p>Insufficient information has been provided! Nothing has been said about how to assign the two said variables, what should they be assigned with??</p>\n",
+                    "user": {
+                        "_id": "5c0092615e6efb28585ab7e5",
+                        "name": "Anand Kumar"
+                    }
+                }
+            ],
+            "approveStatus": "",
+            "coding": [
+                {
+                    "_id": "5c01806cab9c27641ca52503",
+                    "testcases": [
+                        {
+                            "_id": "5c01806cab9c270e09a52505",
+                            "output": "25",
+                            "input": "4",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5c01806cab9c27663fa52504",
+                            "output": "20",
+                            "input": "5",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5dc3adc59576d032f121c54a",
+                            "output": "10",
+                            "input": "10",
+                            "args": "",
+                            "useTestFramework": false
+                        }
+                    ],
+                    "template": "#include <stdio.h>\n\nmain()\n{\n  //write your code here\n}",
+                    "language": "c"
+                },
+                {
+                    "_id": "5c01806cab9c27641ca52503",
+                    "testcases": [
+                        {
+                            "_id": "5c01806cab9c270e09a52505",
+                            "output": "25",
+                            "input": "4",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5c01806cab9c27663fa52504",
+                            "output": "20",
+                            "input": "5",
+                            "args": "",
+                            "useTestFramework": false
+                        },
+                        {
+                            "_id": "5dc3adc59576d035d921c54b",
+                            "output": "10",
+                            "input": "10",
+                            "args": "",
+                            "useTestFramework": false
+                        }
+                    ],
+                    "template": "#include <iostream>\nusing namespace std;\nint main()\n{\n  //write your code here\n}",
+                    "language": "cpp"
+                }
+            ],
+            "hasArg": false,
+            "argumentDescription": "",
+            "hasUserInput": true,
+            "userInputDescription": "A number",
+            "answers": [
+                {
+                    "answerText": "",
+                    "_id": "5c01806cab9c271566a52506",
+                    "answerTextArray": [
+                        ""
+                    ],
+                    "meta": "U2FsdGVkX19PQToOoI9uruIoOJn5lDZ6wAVS2zL6TvEKo+MHhxyjoLOxfauGa4n0",
+                    "iv": "f859644f5918ac17b759af01e953f334",
+                    "isCorrectAnswer": false
+                }
+            ],
+            "wordLimit": 1,
+            "isActive": true,
+            "updatedAt": "2020-02-19T17:45:00.498Z",
+            "createdAt": "2018-11-30T18:24:44.308Z",
+            "plusMark": 0,
+            "minusMark": 0,
+            "answerNumber": 1,
+            "questionHeader": null,
+            "prefferedLanguage": [
+                "English"
+            ],
+            "questionTextArray": [
+                "<p><u><strong>Naming a variable</strong></u> <br/>\nAll variables and function names are case sensitive. This means that capitalization matters.<br/>\n<span style=\"font-family:Courier New,Courier,monospace;\">MYVAR </span>is not the same as <span style=\"font-family:Courier New,Courier,monospace;\">MyVar</span> or <span style=\"font-family:Courier New,Courier,monospace;\">myvar</span>. It is possible to have multiple distinct variables with the same name but different casing. <br/>\n <br/>\n<strong>Things to remember: </strong></p>\n<p>1. Variable names can be made up of letters, numbers and the underscore character ( _ ).</p>\n<p>2. They can’t start with a number. You can use anything from single letters (such as a) to long sentences for variable names.</p>\n<p>3. A variable can’t contain a space, so use an underscore to separate words.</p>\n<p>4. It is not allowed to use keywords as variable name. Keywords are some reserved words for C/C++ like cout, for, if etc.</p>\n<p> <br/>\n<strong>Examples</strong>:<br/>\n<span style=\"font-family:Courier New,Courier,monospace;\">int someVariable = 10;<br/>\nint Total_price = 100;</span></p>\n<p><strong>Question</strong>: A car’s MPG can be calculated using the following formula:<br/>\n                       MPG = miles driven / gallons of gas used</p>\n<p>For a given gallon value <strong>G</strong>, write a program that assigns the value 100 to the total number of miles he or she has driven and <strong>G</strong> to the gallons of gas used , then the program should calculate and display the car’s MPG.</p>\n"
+            ],
+            "category": "code",
+            "questionText": "<p><u><strong>Naming a variable</strong></u> <br/>\nAll variables and function names are case sensitive. This means that capitalization matters.<br/>\n<span style=\"font-family:Courier New,Courier,monospace;\">MYVAR </span>is not the same as <span style=\"font-family:Courier New,Courier,monospace;\">MyVar</span> or <span style=\"font-family:Courier New,Courier,monospace;\">myvar</span>. It is possible to have multiple distinct variables with the same name but different casing. <br/>\n <br/>\n<strong>Things to remember: </strong></p>\n<p>1. Variable names can be made up of letters, numbers and the underscore character ( _ ).</p>\n<p>2. They can’t start with a number. You can use anything from single letters (such as a) to long sentences for variable names.</p>\n<p>3. A variable can’t contain a space, so use an underscore to separate words.</p>\n<p>4. It is not allowed to use keywords as variable name. Keywords are some reserved words for C/C++ like cout, for, if etc.</p>\n<p> <br/>\n<strong>Examples</strong>:<br/>\n<span style=\"font-family:Courier New,Courier,monospace;\">int someVariable = 10;<br/>\nint Total_price = 100;</span></p>\n<p><strong>Question</strong>: A car’s MPG can be calculated using the following formula:<br/>\n                       MPG = miles driven / gallons of gas used</p>\n<p>For a given gallon value <strong>G</strong>, write a program that assigns the value 100 to the total number of miles he or she has driven and <strong>G</strong> to the gallons of gas used , then the program should calculate and display the car’s MPG.</p>\n",
+            "isAllowReuse": "global",
+            "questionType": "single",
+            "complexity": "easy",
+            "grade": {
+                "name": "Programming",
+                "_id": "5bc97c1e6dcc694f0247ea57"
+            },
+            "tags": [],
+            "subject": {
+                "_id": "3835d8c367564425b162d7db",
+                "name": "Core Programming"
+            },
+            "classRooms": [
+                "59e8a6e8223f3000112074d1"
+            ],
+            "uid": "b95aba68-775c-42b9-9946-ef1733de7690",
+            "synced": true,
+            "practiceSets": [
+                "5c01806cab9c27667da524f2",
+                "5e58035951d5b1a2d4ea5d95"
+            ],
+            "mig": "tal",
+            "unit": {
+                "name": "Basic Concepts",
+                "_id": "fa666afaf2114b90ac805a07"
+            },
+            "topic": {
+                "_id": "629852efd1067624835c119d",
+                "name": "Miscellaneous"
+            },
+            "testcases": [
+                {
+                    "_id": "5c01806cab9c270e09a52505",
+                    "output": "25",
+                    "input": "4",
+                    "args": "",
+                    "useTestFramework": false
+                },
+                {
+                    "_id": "5c01806cab9c27663fa52504",
+                    "output": "20",
+                    "input": "5",
+                    "args": "",
+                    "useTestFramework": false
+                },
+                {
+                    "_id": "5dc3adc59576d032f121c54a",
+                    "output": "10",
+                    "input": "10",
+                    "args": "",
+                    "useTestFramework": false
+                }
+            ],
+            "location": "5bc97ba36dcc69790547ea53",
+            "locations": [
+                "5bc97ba36dcc69790547ea53"
+            ],
+            "userRole": "publisher",
+            "isPublished": true,
+            "section": "Core",
+            "order": 4,
+            "countNumber": 4
+        }
+    ],
+    
