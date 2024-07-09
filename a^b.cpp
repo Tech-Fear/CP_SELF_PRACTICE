@@ -10,6 +10,16 @@ int power(int a,int b){
   if(b%2==0) return (temp%MOD*temp%MOD)%MOD;
   return (((a%MOD*temp%MOD)%MOD)*temp%MOD)%MOD;
 }
+
+const int Mod=MOD-1;
+int expo(int a,int b){
+  if(b==0){
+    return 1;
+  }
+  int temp=expo(a,b/2);
+  if(b%2==0) return (temp%Mod*temp%Mod)%Mod;
+  return (((temp%Mod *temp%Mod)%Mod)*a%Mod)%Mod;
+}
 int main()
 {
 
@@ -28,6 +38,11 @@ cin.tie(nullptr);
     n/=2;;
   }
   cout<<endl<<res;
+
+  int a,b,c;
+  a=10,b=2,c=2;
+  int ans=expo(b,c);
+  cout<< endl<<power(a,ans);
 return 0;
 }
 
