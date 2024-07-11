@@ -1,0 +1,1 @@
+{"name":"Local: vacation","url":"e:\\CP_LPU_Batch\\vacation.cpp","tests":[{"id":1720694987000,"input":"3\n10 40 70\n20 50 80\n30 60 90","output":"210"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CP_LPU_Batch\\vacation.cpp","group":"local","local":true}

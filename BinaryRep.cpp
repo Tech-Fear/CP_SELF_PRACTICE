@@ -15,11 +15,11 @@ int main()
 {
 std::ios::sync_with_stdio(false);
 cin.tie(nullptr);
-int n;
-cin>>n;
-binary(n);
-int a = (n & ~(1<<3));
-cout<<endl;
+// int n;
+// cin>>n;
+// binary(n);
+// int a = (n & ~(1<<3));
+// cout<<endl;
 // toggle kth bit N = N^(i<<k)
 // check set kth bit N = N &(i<<k)
 // kth bit set N = N | (1<<k)
@@ -29,7 +29,10 @@ cout<<endl;
 /* a=a^b;
 b=a^b;
 a=a^b;   */
-cout<<INT_MAX;
-binary(a);
+cout<<INT_MAX<<endl;
+int a = (1ll<<31)-1;
+cout<<a<<endl;
+int b=((1<<30)-1)*2+1;
+cout<<b;
 return 0;
 }
