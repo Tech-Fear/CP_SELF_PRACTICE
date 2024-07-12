@@ -36,6 +36,7 @@ typedef vector<p64> vp64;
 typedef vector<p32> vp32;
 const ll MOD = 998244353;
 const double eps = 1e-12;
+const int INT_INF=1e9+7;
 #define forn(i,e) for(ll i = 0; i < e; i++)
 #define forsn(i,s,e) for(ll i = s; i < e; i++)
 #define rforn(i,s) for(ll i = s; i >= 0; i--)
@@ -50,28 +51,24 @@ const double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
-ll solve(ll w,v64 &weights,v64 &value,ll n,vv64 &dp) {
-  if(w==0 || n==0) return 0;
-  if(dp[n][w]!=-1) return dp[n][w];
-  if(weights[n-1]>w){
-    return dp[n][w]=solve(w,weights,value,n-1,dp);
-  }
-  return dp[n][w]=max(value[n-1]+solve(w-weights[n-1],weights,value,n-1,dp),solve(w,weights,value,n-1,dp));
+
+ll uniquePaths(vector<string>&grid,int i,int j,int n,int m,vv64 &dp){
+  if(i==n-1 && j==m-1) return 1;
+  if(i>=n || j>=m || grid[i][j]=='#') return 0;
+  if(dp[i][j]!=-1) return dp[i][j];
+  dp[i][j]=(uniquePaths(grid,i+1,j,n,m,dp)%INT_INF+uniquePaths(grid,i,j+1,n,m,dp)%INT_INF)%INT_INF;
+  return dp[i][j];
 }
 
 int main() {
     fast_cin();
-    ll n,w;
-    cin >> n >> w;
-    v64 weights(n),value(n);
-    vv64 dp(n+1,v64(w+1,-1));
-    dp[n][0]=0;
-    dp[0][w]=0;
+    int n,m;
+    cin>>n>>m;
+    vector<string>grid(n);  
+    vv64 dp(n,v64(m,-1));
     forn(i,n){
-      cin>>weights[i]>>value[i];
+      cin>>grid[i];
     }
-    cout<<solve(w,weights,value,n,dp);
-  
+    cout<<uniquePaths(grid,0,0,n,m,dp);
     return 0;
 }
-

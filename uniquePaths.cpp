@@ -50,28 +50,34 @@ const double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
-ll solve(ll w,v64 &weights,v64 &value,ll n,vv64 &dp) {
-  if(w==0 || n==0) return 0;
-  if(dp[n][w]!=-1) return dp[n][w];
-  if(weights[n-1]>w){
-    return dp[n][w]=solve(w,weights,value,n-1,dp);
-  }
-  return dp[n][w]=max(value[n-1]+solve(w-weights[n-1],weights,value,n-1,dp),solve(w,weights,value,n-1,dp));
+
+ll uniquePaths(ll i,ll j,vv64 &grid,ll m,ll n){
+  if(i>=m || j>=n) return 0;
+  if(i==m-1 && j==n-1) return 1;
+  if (grid[i][j] != -1) return grid[i][j];
+    grid[i][j] = uniquePaths(i + 1, j, grid, m, n) + uniquePaths(i, j + 1, grid, m, n);
+    return grid[i][j];
 }
 
 int main() {
     fast_cin();
-    ll n,w;
-    cin >> n >> w;
-    v64 weights(n),value(n);
-    vv64 dp(n+1,v64(w+1,-1));
-    dp[n][0]=0;
-    dp[0][w]=0;
-    forn(i,n){
-      cin>>weights[i]>>value[i];
-    }
-    cout<<solve(w,weights,value,n,dp);
-  
+    ll m,n;
+    cin>>m>>n;
+    vv64 grid(m,v64(n,-1));
+    cout<<uniquePaths(0,0,grid,m,n);
     return 0;
 }
-
+//iterative approch 
+/*
+  dp[n+1][m+1]
+  dp[n-1][m-1]=1;
+  for(int i=n-1;i>=0;i--){
+    for(int j=m-1;j>=0;j--){
+      if(i==m-1 && j==m-1) continue;
+      int ans=0;
+      if(i+1<n) ans+=dp[i+1][j];
+      id(j+1<m) ans+=dp[i][j+1];
+    }
+  }
+  return dp[0][0];
+*/

@@ -50,28 +50,27 @@ const double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
-ll solve(ll w,v64 &weights,v64 &value,ll n,vv64 &dp) {
-  if(w==0 || n==0) return 0;
-  if(dp[n][w]!=-1) return dp[n][w];
-  if(weights[n-1]>w){
-    return dp[n][w]=solve(w,weights,value,n-1,dp);
+
+
+int subset(int i,int sum,vector<int>&A,int k,vv32 &dp){
+  if(dp[i][sum]!=-1) return dp[i][sum];
+  if(i==A.size()-1){
+    return abs((k-sum)-sum);
   }
-  return dp[n][w]=max(value[n-1]+solve(w-weights[n-1],weights,value,n-1,dp),solve(w,weights,value,n-1,dp));
+  int ans=min(subset(i+1,sum+A[i],A,k,dp),subset(i+1,sum,A,k,dp));
+  return dp[i][ans]=ans;
 }
-
-int main() {
-    fast_cin();
-    ll n,w;
-    cin >> n >> w;
-    v64 weights(n),value(n);
-    vv64 dp(n+1,v64(w+1,-1));
-    dp[n][0]=0;
-    dp[0][w]=0;
-    forn(i,n){
-      cin>>weights[i]>>value[i];
-    }
-    cout<<solve(w,weights,value,n,dp);
-  
-    return 0;
+int main(){
+  fast_cin();
+  int n,k=0;
+  cin>>n;
+  v32 A(n);
+  forn(i,n){
+    cin>>A[i];
+    k+=A[i];
+  }
+  vv32 dp(n,v32(k+1,-1));
+  int a=subset(0,0,A,k,dp);
+  cout<<a;
+  return 0;
 }
-

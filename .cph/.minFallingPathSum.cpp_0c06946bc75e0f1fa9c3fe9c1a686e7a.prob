@@ -1,0 +1,1 @@
+{"name":"Local: minFallingPathSum","url":"e:\\CP_LPU_Batch\\minFallingPathSum.cpp","tests":[{"id":1720762906693,"input":"2 2\n-19 57 -40 -5","output":"-59"},{"id":1720762961294,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CP_LPU_Batch\\minFallingPathSum.cpp","group":"local","local":true}

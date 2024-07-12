@@ -1,0 +1,1 @@
+{"name":"Local: subsetMin","url":"e:\\CP_LPU_Batch\\subsetMin.cpp","tests":[{"id":1720774261205,"input":"4\n1 6 11 5","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CP_LPU_Batch\\subsetMin.cpp","group":"local","local":true}
