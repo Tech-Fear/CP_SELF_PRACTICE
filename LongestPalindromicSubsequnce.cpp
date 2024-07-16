@@ -36,7 +36,7 @@ typedef vector<p64> vp64;
 typedef vector<p32> vp32;
 const ll MOD = 998244353;
 const double eps = 1e-12;
-#define forn(i,e) for(ll i = 0; i < e; i++)
+#define forn(a,e) for(ll i = a; i < e; i++)
 #define forsn(i,s,e) for(ll i = s; i < e; i++)
 #define rforn(i,s) for(ll i = s; i >= 0; i--)
 #define rforsn(i,s,e) for(ll i = s; i >= e; i--)
@@ -47,40 +47,56 @@ const double eps = 1e-12;
 #define fi first
 #define se second
 #define INF 2e18
+const int INTMOD = 1e9+7;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
 
-int subset(int i,int sum,vector<int>&A,int k,vv32 &dp){
-  if(i==A.size()){
-    return abs((k-sum)-sum);
-  }
-  if(dp[i][sum]!=-1) return dp[i][sum];
-  int ans=min(subset(i+1,sum+A[i],A,k,dp),subset(i+1,sum,A,k,dp));
-  return dp[i][sum]=ans;
-}
-int main(){
-  fast_cin();
-  int n,k=0;
-  cin>>n;
-  v32 A(n);
-  forn(i,n){
-    cin>>A[i];
-    k+=A[i];
-  }
-  vv32 dp(n,v32(k+1,-1));
-  int a=subset(0,0,A,k,dp);
-  cout<<a;
-  return 0;
-}
+// int main() {
+//     fast_cin();
+//     string s;
+//     cin>>s;
+//     // lsc of string and its reverse gives the palindromic subsequence of the string 
+    
+//     return 0;
+// }
 
-/*
-    vv64 dp(n+1,v64(k+1,0));
-    forn(i,n){
-      forn(i,k+1){
-        if()
+int main(){
+ fast_cin();
+    string s;
+    cin>>s;
+    string s1=s;
+    reverse(s1.begin(),s1.end());
+    string t=s1;
+    int n=s.length(),m=t.length();
+    vector<vector<int>>dp(n+1,vector<int>(m+1));
+    for(int i=0;i<=n;i++){
+      dp[i][m]=0;
+    }
+    for(int i=0;i<=m;i++){
+      dp[n][i]=0;
+    }
+    for(int i=n-1;i>=0;i--){
+      for(int j=m-1;j>=0;j--){
+        if(s[i]==t[j]) dp[i][j]=dp[i+1][j+1]+1;
+        else{
+          dp[i][j]=max(dp[i+1][j],dp[i][j+1]);
+        } 
       }
     }
-*/
-
+    string ans;
+    int i=0,j=0;
+    while(i<n &&j<m){
+      if(s[i]==t[j]){
+        ans.push_back(s[i]);
+        i++,j++;
+      }else{
+        if(dp[i+1][j]>dp[i][j+1]) i++;
+        else j++;
+      }
+    }
+    cout<<ans;
+    cout<<s.length()-ans.length();
+    return 0;
+}

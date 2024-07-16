@@ -1,1 +1,1 @@
-{"name":"Local: grid1","url":"e:\\CP_LPU_Batch\\grid1.cpp","tests":[],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CP_LPU_Batch\\grid1.cpp","group":"local","local":true}
+{"name":"Local: grid1","url":"e:\\CP_LPU_Batch\\grid1.cpp","tests":[{"id":1720780069139,"input":"3 4\n...#\n.#..\n....\n","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CP_LPU_Batch\\grid1.cpp","group":"local","local":true}

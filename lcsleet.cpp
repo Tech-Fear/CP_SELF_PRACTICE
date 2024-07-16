@@ -36,7 +36,7 @@ typedef vector<p64> vp64;
 typedef vector<p32> vp32;
 const ll MOD = 998244353;
 const double eps = 1e-12;
-#define forn(i,e) for(ll i = 0; i < e; i++)
+#define forn(a,e) for(ll i = a; i < e; i++)
 #define forsn(i,s,e) for(ll i = s; i < e; i++)
 #define rforn(i,s) for(ll i = s; i >= 0; i--)
 #define rforsn(i,s,e) for(ll i = s; i >= e; i--)
@@ -47,40 +47,26 @@ const double eps = 1e-12;
 #define fi first
 #define se second
 #define INF 2e18
+const int INTMOD = 1e9+7;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
-
-int subset(int i,int sum,vector<int>&A,int k,vv32 &dp){
-  if(i==A.size()){
-    return abs((k-sum)-sum);
-  }
-  if(dp[i][sum]!=-1) return dp[i][sum];
-  int ans=min(subset(i+1,sum+A[i],A,k,dp),subset(i+1,sum,A,k,dp));
-  return dp[i][sum]=ans;
-}
-int main(){
-  fast_cin();
-  int n,k=0;
-  cin>>n;
-  v32 A(n);
-  forn(i,n){
-    cin>>A[i];
-    k+=A[i];
-  }
-  vv32 dp(n,v32(k+1,-1));
-  int a=subset(0,0,A,k,dp);
-  cout<<a;
-  return 0;
-}
-
-/*
-    vv64 dp(n+1,v64(k+1,0));
-    forn(i,n){
-      forn(i,k+1){
-        if()
-      }
+int solve(string &s1, string &s2, int m, int n, vv32 &dp) {
+    if (n == 0 || m == 0) return 0;
+    if (dp[m][n] != -1) return dp[m][n];
+    if (s1[m-1] == s2[n-1]) {
+        dp[m][n] = solve(s1, s2, m-1, n-1, dp) + 1;
+    } else {
+        dp[m][n] = max(solve(s1, s2, m-1, n, dp), solve(s1, s2, m, n-1, dp));
     }
-*/
-
+    return dp[m][n];
+}
+int main() {
+    fast_cin();
+    string s1,s2;
+    cin>>s1>>s2;
+    vv32 dp(s1.length()+1,v32(s2.length()+1,-1));
+    cout<<solve(s1,s2,s1.length(),s2.length(),dp);
+    return 0;
+}

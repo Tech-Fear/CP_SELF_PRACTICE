@@ -36,7 +36,7 @@ typedef vector<p64> vp64;
 typedef vector<p32> vp32;
 const ll MOD = 998244353;
 const double eps = 1e-12;
-#define forn(i,e) for(ll i = 0; i < e; i++)
+#define forn(a,e) for(ll i = a; i < e; i++)
 #define forsn(i,s,e) for(ll i = s; i < e; i++)
 #define rforn(i,s) for(ll i = s; i >= 0; i--)
 #define rforsn(i,s,e) for(ll i = s; i >= e; i--)
@@ -47,40 +47,33 @@ const double eps = 1e-12;
 #define fi first
 #define se second
 #define INF 2e18
+const int INTMOD = 1e9+7;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
-
-int subset(int i,int sum,vector<int>&A,int k,vv32 &dp){
-  if(i==A.size()){
-    return abs((k-sum)-sum);
-  }
-  if(dp[i][sum]!=-1) return dp[i][sum];
-  int ans=min(subset(i+1,sum+A[i],A,k,dp),subset(i+1,sum,A,k,dp));
-  return dp[i][sum]=ans;
-}
-int main(){
-  fast_cin();
-  int n,k=0;
-  cin>>n;
-  v32 A(n);
-  forn(i,n){
-    cin>>A[i];
-    k+=A[i];
-  }
-  vv32 dp(n,v32(k+1,-1));
-  int a=subset(0,0,A,k,dp);
-  cout<<a;
-  return 0;
-}
-
-/*
-    vv64 dp(n+1,v64(k+1,0));
-    forn(i,n){
-      forn(i,k+1){
-        if()
-      }
+ll solve(int i, ll x, ll to_calc, v32 &arr, vv32 &dp) {
+    if (i == arr.size()) {
+        return (to_calc - 2 * x == 0) ? 1 : 0;
     }
-*/
+    if (dp[i][x] != -1) return dp[i][x];
+    ll include = (arr[i] <= to_calc) ? solve(i + 1, x + arr[i], to_calc, arr, dp) : 0;
+    ll exclude = solve(i + 1, x, to_calc, arr, dp);
+    return dp[i][x] = include + exclude;
+}
 
+int main() {
+    fast_cin();
+    int n,x;
+    cin>>n>>x;
+    v32 arr(n);
+    forn(0,n){
+      cin>>arr[i];
+    }
+    ll total_sum=accumulate(all(arr),0ll);
+    ll to_calc=(total_sum+x);
+    vv32 dp(n,v32(to_calc,-1));
+    cout<<solve(0,0,to_calc,arr,dp);
+    
+    return 0;
+}

@@ -50,28 +50,50 @@ const double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
-ll solve(ll w,v64 &weights,v64 &value,ll n,vv64 &dp) {
-  if(w==0 || n==0) return 0;
-  if(dp[n][w]!=-1) return dp[n][w];
-  if(weights[n-1]>w){
-    return dp[n][w]=solve(w,weights,value,n-1,dp);
-  }
-  return dp[n][w]=max(value[n-1]+solve(w-weights[n-1],weights,value,n-1,dp),solve(w,weights,value,n-1,dp));
-}
+// ll solve(ll w,v64 &weights,v64 &value,ll n,vv64 &dp) {
+//   if(w==0 || n==0) return 0;
+//   if(dp[n][w]!=-1) return dp[n][w];
+//   if(weights[n-1]>w){
+//     return dp[n][w]=solve(w,weights,value,n-1,dp);
+//   }
+//   return dp[n][w]=max(value[n-1]+solve(w-weights[n-1],weights,value,n-1,dp),solve(w,weights,value,n-1,dp));
+// }
+
+// int main() {
+//     fast_cin();
+//     ll n,w;
+//     cin >> n >> w;
+//     v64 weights(n),value(n);
+//     vv64 dp(n+1,v64(w+1,-1));
+//     dp[n][0]=0;
+//     dp[0][w]=0;
+//     forn(i,n){
+//       cin>>weights[i]>>value[i];
+//     }
+//     cout<<solve(w,weights,value,n,dp);
+  
+//     return 0;
+// }
 
 int main() {
     fast_cin();
     ll n,w;
     cin >> n >> w;
     v64 weights(n),value(n);
-    vv64 dp(n+1,v64(w+1,-1));
-    dp[n][0]=0;
-    dp[0][w]=0;
+    vv64 dp(n+1,v64(w+1,0));
     forn(i,n){
       cin>>weights[i]>>value[i];
     }
-    cout<<solve(w,weights,value,n,dp);
-  
+    for(int i=n-1;i>=0;i--){
+      for(int j=1;j<=w;j++){
+        if(weights[i]<=j){
+          dp[i][j]=max(dp[i+1][j],dp[i+1][j-weights[i]]+value[i]);
+        }else{
+          dp[i][j]=dp[i+1][j];
+        }
+      }
+    }
+    cout<<dp[0][w];
     return 0;
 }
 

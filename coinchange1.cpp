@@ -36,7 +36,7 @@ typedef vector<p64> vp64;
 typedef vector<p32> vp32;
 const ll MOD = 998244353;
 const double eps = 1e-12;
-#define forn(i,e) for(ll i = 0; i < e; i++)
+#define forn(a,e) for(ll i = a; i < e; i++)
 #define forsn(i,s,e) for(ll i = s; i < e; i++)
 #define rforn(i,s) for(ll i = s; i >= 0; i--)
 #define rforsn(i,s,e) for(ll i = s; i >= e; i--)
@@ -47,40 +47,43 @@ const double eps = 1e-12;
 #define fi first
 #define se second
 #define INF 2e18
+const int INTMOD = 1e9+7;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
-
-
-int subset(int i,int sum,vector<int>&A,int k,vv32 &dp){
-  if(i==A.size()){
-    return abs((k-sum)-sum);
-  }
-  if(dp[i][sum]!=-1) return dp[i][sum];
-  int ans=min(subset(i+1,sum+A[i],A,k,dp),subset(i+1,sum,A,k,dp));
-  return dp[i][sum]=ans;
-}
-int main(){
-  fast_cin();
-  int n,k=0;
-  cin>>n;
-  v32 A(n);
-  forn(i,n){
-    cin>>A[i];
-    k+=A[i];
-  }
-  vv32 dp(n,v32(k+1,-1));
-  int a=subset(0,0,A,k,dp);
-  cout<<a;
-  return 0;
-}
-
-/*
-    vv64 dp(n+1,v64(k+1,0));
-    forn(i,n){
-      forn(i,k+1){
-        if()
+class Solution {
+private:
+    int solve(int i,int amount,v32 &coins,vv32 &dp){
+      if(i==coins.size()){
+        if(amount==0) return 0;
+        return 1e8;
       }
+      if(dp[i][amount]!=-1) return dp[i][amount];
+      int ans=1e8;
+      ans=min(ans,solve(i+1,amount,coins,dp));
+      if(coins[i]<=amount){
+        ans=min(ans,solve(i,amount-coins[i],coins,dp)+1);
+      }
+      return dp[i][amount]=ans;
     }
-*/
+public:
+    int coinChange(vector<int>& coins, int amount) {
+        vv32 dp(coins.size()+1,v32(amount+1,-1));
+        return solve(0,amount,coins,dp);
+    }
+};
 
+int main() {
+    fast_cin();
+    int n;
+    cin>>n;
+    int amount;
+    cin>>amount;
+    v32 arr(n);
+    forsn(i,0,n){
+      cin>>arr[i];
+    }
+    Solution obj1;
+    cout<<obj1.coinChange(arr,amount);
+    return 0;
+}
