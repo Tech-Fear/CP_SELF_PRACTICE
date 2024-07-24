@@ -19,7 +19,7 @@ int main()
     while (l <= r)
     {
         int mid = l + (r - l) / 2;
-        if ((mid == n - 1 || arr[mid] > arr[mid + 1]) && (mid == 0 || arr[mid] > arr[mid - 1]))
+        if ((mid <=r && arr[mid] > arr[mid + 1]) && (mid>=l && arr[mid] > arr[mid - 1]))
         {      peakElement=arr[peakElement]>arr[mid]?peakElement:mid;
             break;
         }

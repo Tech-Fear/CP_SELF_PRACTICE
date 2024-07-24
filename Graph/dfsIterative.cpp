@@ -60,7 +60,7 @@ int main()
   fast_cin();
   int n, e;
   cin >> n >> e;
-  vector<vector<int>> arr(n + 1);
+  unordered_map<int, vector<int>> arr;
   for (int i = 0; i < e; i++)
   {
     int a, b;
@@ -68,13 +68,39 @@ int main()
     arr[a].push_back(b);
     arr[b].push_back(a);
   }
-  for (int i = 1; i < n + 1; i++)
+  vector<bool> visited(n, false);
+  vector<int> result;
+  stack<int> st;
+  st.push(0);
+  bool flag = true;
+  int par = -1;
+  while (!st.empty())
   {
-    for (int j = 1; j <= n; j++)
+    int ans = st.top();
+    if (!visited[ans])
     {
-      cout << arr[i][j] << " ";
+      result.push_back(ans);
+      visited[ans] = true;
     }
-    cout << ln;
+    st.pop();
+    for (auto i : arr[ans])
+    {
+      if (i == par)
+        continue;
+      if (visited[i])
+      {
+        flag = true;
+        break;
+      }
+      st.push(i);
+    }
+    if (flag)
+    {
+      cout << "hasCycle";
+      break;
+    }
   }
+  if (!flag)
+    cout << "NO cycle";
   return 0;
 }

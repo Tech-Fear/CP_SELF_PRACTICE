@@ -7,13 +7,13 @@ int main()
 {
   int n, m;
   cin >> n >> m;
-  vector<vector<int>>arr(n,vector<int>(n,0));
+  vector<vector<int>> arr(n, vector<int>(n, 0));
   for (int i = 0; i < m; i++)
   {
     int a, b;
     cin >> a >> b;
-    arr[a-1][b-1] = 1;
-    arr[b-1][a-1] = 1;
+    arr[a - 1][b - 1] = 1;
+    arr[b - 1][a - 1] = 1;
   }
   for (int i = 0; i < n; i++)
   {

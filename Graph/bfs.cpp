@@ -55,12 +55,34 @@ const int INTMOD = 1e9 + 7;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
+void bfs(int u, unordered_map<int, vector<int>> &arr, vector<bool> &visited, vector<int> &result)
+{
+  queue<int> que;
+  visited[u] = true;
+  que.push(u);
+  result.push_back(u);
+  while (!que.empty())
+  {
+    int U = que.front();
+    que.pop();
+    for (auto &v : arr[U])
+    {
+      if (!visited[v])
+      {
+        que.push(v);
+        visited[v] = true;
+        result.push_back(v);
+      }
+    }
+  }
+}
+
 int main()
 {
   fast_cin();
   int n, e;
   cin >> n >> e;
-  vector<vector<int>> arr(n + 1);
+  unordered_map<int, vector<int>> arr;
   for (int i = 0; i < e; i++)
   {
     int a, b;
@@ -68,13 +90,12 @@ int main()
     arr[a].push_back(b);
     arr[b].push_back(a);
   }
-  for (int i = 1; i < n + 1; i++)
+  vector<bool> visited(n + 1, false);
+  vector<int> result;
+  bfs(0, arr, visited, result);
+  for (auto i : result)
   {
-    for (int j = 1; j <= n; j++)
-    {
-      cout << arr[i][j] << " ";
-    }
-    cout << ln;
+    cout << i << " ";
   }
   return 0;
 }
