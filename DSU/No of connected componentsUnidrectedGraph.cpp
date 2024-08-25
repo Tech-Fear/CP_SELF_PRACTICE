@@ -52,32 +52,49 @@ const int INTMOD = 1e9+7;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
-ll power(ll a,ll b,int p){
-  if(b==0) return 1;
-  int res=power(a,b/2,p);
-  if(b&1){
-    return (((res%p)*(res%p))%p*(a%p))%p;
-  }else{
-    return ((res%p)*(res%p))%p;
-  }
-}
-bool primeCheck(int p){
-  if(p==1) return true;
-  if(p==2 || p==3) return true;
-  if(p%2==0 || p%3==0) return false;
-  for(int i=5;i*i<=p;i+=6){
-    if(p%i==0 || p%(i+2)==0) return false;
-  }
-  return true;
-}
+class UnionFind{
+  private:
+    vector<int>root,rank;
+    int count;
+public:
+    UnionFind(int n){
+      root.assign(n+1,0);
+      rank.assign(n+1,0);
+      for(int i=0;i<=n;i++){
+        root[i]=i;
+      }
+      count=n;
+    }
+    int find(int i){
+      if(i==root[i]) return i;
+      return root[i]=find(root[i]);
+    }
+    bool isSame(int i,int j){
+      return find(i)==find(j);
+    }
+    void unionS(int i,int j){
+      if(isSame(i,j)) return;
+      int x=find(i);
+      int y=find(j);
+      if(rank[x]<rank[y]) swap(x,y);
+      if(rank[x]==rank[y]) rank[x]++;
+      root[y]=x;
+      count--;
+    }
+    int connectedComponents(){
+      return count;
+    }
+};
 void solve(int tc=0) {
-  ll p,a;
-  cin>>p>>a;
-  if(!primeCheck(p) || a<=0) {cout<<"First number should be prime and both should be positive integer\n";
-  return ;}
-  ll po=power(a,p-1,p);
-  if(po%p==1) cout<<"Is prime";
-  else cout<<"Not a prime";
+  int n,e;
+  cin>>n>>e;
+  UnionFind uf(n);
+  for(int i=0;i<e;i++){
+    int a,b;
+    cin>>a>>b;
+    uf.unionS(a,b);
+  }
+  cout<<uf.connectedComponents();
 }
 int main() {
     fast_cin();

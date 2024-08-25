@@ -52,32 +52,67 @@ const int INTMOD = 1e9+7;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
-ll power(ll a,ll b,int p){
-  if(b==0) return 1;
-  int res=power(a,b/2,p);
-  if(b&1){
-    return (((res%p)*(res%p))%p*(a%p))%p;
-  }else{
-    return ((res%p)*(res%p))%p;
+void setZeros(vv32 &arr){
+  bool rowZero=false,colZero=false;
+  int n=arr.size();
+  int m=arr[0].size();
+  for(int i=0;i<m;i++){
+    if(arr[i][0]==0){
+      colZero=true;
+      break;
+    }
   }
-}
-bool primeCheck(int p){
-  if(p==1) return true;
-  if(p==2 || p==3) return true;
-  if(p%2==0 || p%3==0) return false;
-  for(int i=5;i*i<=p;i+=6){
-    if(p%i==0 || p%(i+2)==0) return false;
+  for(int i=0;i<n;i++){
+    if(arr[0][i]==0){
+      rowZero=true;
+      break;
+    }
   }
-  return true;
+  for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+      if(arr[i][j]==0){
+        arr[i][0]=0;
+        arr[0][j]=0;
+      }
+    }
+  }
+  forsn(i,0,n){
+    forsn(j,0,m){
+      if(arr[i][0]==0 || arr[0][j]==0){
+        arr[i][j]=0;
+      }
+    }
+  }
+  if(rowZero){
+    forsn(i,0,m){
+      arr[0][i]=0;
+    }
+  }
+  if(colZero){
+    forsn(i,0,n){
+      arr[i][0]=0;
+    }
+  }  
 }
+
 void solve(int tc=0) {
-  ll p,a;
-  cin>>p>>a;
-  if(!primeCheck(p) || a<=0) {cout<<"First number should be prime and both should be positive integer\n";
-  return ;}
-  ll po=power(a,p-1,p);
-  if(po%p==1) cout<<"Is prime";
-  else cout<<"Not a prime";
+  int n,m;
+  cin>>n>>m;
+  vv32 arr(n,v32(m));
+  forsn(i,0,n){
+    forsn(j,0,m){
+      cin>>arr[i][j];
+    }
+  }
+  cout<<endl;
+  setZeros(arr);
+  forsn(i,0,n){
+    forsn(j,0,m){
+      cout<<arr[i][j]<<" ";
+    }
+    cout<<endl;
+  }
+
 }
 int main() {
     fast_cin();
