@@ -52,63 +52,27 @@ const int INTMOD = 1e9+7;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
-void setZeros(vv32 &arr){
-  bool rowZero=false,colZero=false;
-  int n=arr.size();
-  int m=arr[0].size();
-  for(int i=0;i<m;i++){
-    if(arr[i][0]==0){
-      colZero=true;
-      break;
-    }
-  }
-  for(int i=0;i<n;i++){
-    if(arr[0][i]==0){
-      rowZero=true;
-      break;
-    }
-  }
-  for(int i=0;i<n;i++){
-    for(int j=0;j<m;j++){
-      if(arr[i][j]==0){
-        arr[i][0]=0;
-        arr[0][j]=0;
-      }
-    }
-  }
-  forsn(i,1,n){
-    forsn(j,1,m){
-      if(arr[i][0]==0 || arr[0][j]==0){
-        arr[i][j]=0;
-      }
-    }
-  }
-  if(rowZero){
-    forsn(i,0,m){
-      arr[0][i]=0;
-    }
-  }
-  if(colZero){
-    forsn(i,0,n){
-      arr[i][0]=0;
-    }
-  }  
-}
 
 void solve(int tc=0) {
-  int n,m;
-  cin>>n>>m;
-  vv32 arr(n,v32(m));
-  forsn(i,0,n){
-    forsn(j,0,m){
-      cin>>arr[i][j];
+  cin>>tc;
+  while(tc--){
+    int a;
+    cin>>a;
+    vector<string>vec(a);
+    vector<int>ans;
+    forsn(j,0,a){
+      cin>>vec[j];
+      int i=0;
+      for(auto &s:vec[j]){
+        if(s=='#'){
+          ans.push_back(i+1);
+          break;
+        }
+        i++;
+      }
     }
-  }
-  cout<<endl;
-  setZeros(arr);
-  forsn(i,0,n){
-    forsn(j,0,m){
-      cout<<arr[i][j]<<" ";
+    rforsn(i,a-1,0){
+      cout<<ans[i]<<" ";
     }
     cout<<endl;
   }
