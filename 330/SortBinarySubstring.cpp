@@ -52,57 +52,36 @@ const int INTMOD = 1e9+7;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
-// https://www.geeksforgeeks.org/problems/number-of-good-components--170647/0
-
-
-class Solution {
-    private:
-        void dfs(map<int,vector<int>>&adj,vector<bool>&visited,int &edg,int &vertices,int s){
-            visited[s]=true;
-            edg+=adj[s].size();
-            for(auto &d:adj[s]){
-                if(!visited[d]){
-                    vertices++;
-                    dfs(adj,visited,edg,vertices,d);
-                }
-            }
+void solve() {  
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    int l=0,r=0;
+    int count=0;
+    while(l<n){
+        if(s[l]=='0'){
+            l++;
+            continue;
         }
-  public:
-    int findNumberOfGoodComponent(int e, int v, vector<vector<int>> &edges) {
-        // code here
-        int full=0;
-        map<int,vector<int>>adj;
-        for(auto &k:edges){
-            int fir=k[0];
-            int sec=k[1];
-            adj[fir].push_back(sec);
-            adj[sec].push_back(fir);
+        r=l+1;
+        while(r<n && s[r]=='1'){
+            r++;
         }
-        vector<bool>visited(v+1,false);
-        for(int i=1;i<=v;i++){
-            int edg=0;
-            int vertices=1;
-            if(!visited[i]){
-                dfs(adj,visited,edg,vertices,i);
-                if((vertices*(vertices-1))/2==edg/2) full++;
-            }  
-        }
-        return full;
+        if(r==n) break;
+        count++;
+        reverse(s.begin()+l,s.begin()+r);
+        l=r;
     }
-};
-k
-void solve(int tc=0) {
-  int v,e; // v -> number of vertices, e -> number of edges
-  cin>>v>>e;
-  vv32 edges(e,v32(2)); // stores the number of edges in format 1-2, 2-3 which tells that there is edges from 1 to 2 (Undirected)
-  for(int i=0;i<e;i++){
-    cin>>edges[i][0]>>edges[i][1];
-  }
-  Solution sol;
-  cout<<sol.findNumberOfGoodComponent(e,v,edges);
+    cout<<count;
+
 }
 int main() {
     fast_cin();
-    solve();
+    int tc=1;
+    // cin>>tc;
+    while(tc--){
+        solve();
+    }
     return 0;
 }
